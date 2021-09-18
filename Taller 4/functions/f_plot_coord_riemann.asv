@@ -5,15 +5,8 @@ function [] = f_plot_coord_riemann(z,color)
 %   z: vector de numeros complejos. P.ej z = [2+5i 4+i]
 %   color: color de la grafica
 %   ===========OUTPUT============
-%   plot de cada punto del vector en la esfera de Riemann
-%   =========MODO DE USO=========
-%   f_plot_coord_riemann([2+5i 4+i],'b');
-%   ===========AUTORES===========
-%   Sebastian Suarez
-%   Alejandro Garcia
-%   Estefania Laverde
-
-    %Grafica la esfera de radio 1 centrada en el origen 
+%   plot del vector en 
+    coord = f_coord_riemann(z);
     [X,Y,Z] = sphere;
     hSurface=surf(X,Y,Z);
     axis equal;
@@ -21,9 +14,6 @@ function [] = f_plot_coord_riemann(z,color)
         'gouraud','EdgeColor','k','LineStyle','--','LineWidth',0.01)
     
     hold on
-    
-    %Grafica el vector en la esfera
-    coord = f_coord_riemann(z);
     plot3(coord(1,:),coord(2,:),coord(3,:),'.','Color',color,'LineWidth',1);
     hold off
 end
