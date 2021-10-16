@@ -26,12 +26,19 @@ title("Imágen #1 Original")
 
 %Transformacion
 Trans = exp(Zcomplejos);
+trans2= Zcomplejos.^3;
 rt = real(Trans);
 it = imag(Trans);
+rt2 = real(Trans2);
+it2 = imag(Trans2);
 
 real_reshape = reshape(rt,1,[]);
 imag_reshape = reshape(it,1,[]);
 color_reshape = reshape(colores,1,[]);
+
+real_reshape2 = reshape(rt,1,[]);
+imag_reshape2 = reshape(it,1,[]);
+color_reshape2 = reshape(colores,1,[]);
 
 
 figure
@@ -40,6 +47,11 @@ title('Imagen 1 transformada')
 colormap('gray')
 shading interp
 
+figure
+scatter(real_reshape2,imag_reshape2,10,color_reshape2,'filled')
+title('Imagen 1 transformada')
+colormap('gray')
+shading interp
 %Segunda imagen
 
 M1=imread('img1.jpg');
